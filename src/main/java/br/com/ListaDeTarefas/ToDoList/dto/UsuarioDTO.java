@@ -4,10 +4,12 @@ import org.springframework.beans.BeanUtils;
 
 import br.com.ListaDeTarefas.ToDoList.entity.UsuarioEntity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class UsuarioDTO {
 
 	
@@ -18,11 +20,7 @@ public class UsuarioDTO {
 	private String senha;
 	private String descricao;
 	
-	
-	public UsuarioDTO() {
-		
-	}
-	
+
 	public UsuarioDTO(UsuarioEntity usuarioEntity) {
 		BeanUtils.copyProperties(usuarioEntity, this);
 		

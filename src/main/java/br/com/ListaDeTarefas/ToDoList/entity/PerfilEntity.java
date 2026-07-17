@@ -1,9 +1,9 @@
 package br.com.ListaDeTarefas.ToDoList.entity;
 
-
 import org.springframework.beans.BeanUtils;
 
-import br.com.ListaDeTarefas.ToDoList.dto.UsuarioDTO;
+import br.com.ListaDeTarefas.ToDoList.dto.PerfilDTO;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,28 +14,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
 @EqualsAndHashCode(of = "id")
+@Table(name = "Perfil")
 @NoArgsConstructor
 @Entity
-@Table(name="Usuario")
-public class UsuarioEntity {
-	
+public class PerfilEntity {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String nome;
-	private String login;
-	private String email;
-	private String senha;
+	@Column(nullable = false)
 	private String descricao;
-	
-	
-	public UsuarioEntity(UsuarioDTO usuarioDTO) {
-		BeanUtils.copyProperties(usuarioDTO, this);
+
+	public PerfilEntity(PerfilDTO perfilDTO) {
+		BeanUtils.copyProperties(perfilDTO, this);
 		
 	}
-	
 }
+
+
