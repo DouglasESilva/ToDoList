@@ -30,7 +30,6 @@ public class UsuarioEntity {
 	private String login;
 	private String email;
 	private String senha;
-	private String descricao;
 	
 	
 	public UsuarioEntity(UsuarioDTO usuarioDTO) {

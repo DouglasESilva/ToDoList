@@ -1,5 +1,8 @@
 package br.com.ListaDeTarefas.ToDoList.entity;
 
+import org.springframework.beans.BeanUtils;
+
+import br.com.ListaDeTarefas.ToDoList.dto.PerfilUsuarioDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +19,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "PERFIL_USUARIO")
 public class PerfilUsuarioEntity {
@@ -33,4 +35,18 @@ public class PerfilUsuarioEntity {
 	@ManyToOne
 	@JoinColumn(name = "ID_PERFIL")
 	private PerfilEntity perfilEntity;
+	
+	public PerfilUsuarioEntity(PerfilUsuarioDTO perfilUsuario) {
+		
+		BeanUtils.copyProperties(perfilUsuario, this);
+		
+		if(perfilUsuario != null && perfilUsuario.getUsuario() != null) {
+			this.usuarioEntity = new UsuarioEntity(perfilUsuario.getUsuario());
+		}
+		
+		if(perfilUsuario != null && perfilUsuario.getPerfil() != null) {
+			this.perfilEntity = new PerfilEntity(perfilUsuario.getPerfil());
+		}
+	}
+	
 }
