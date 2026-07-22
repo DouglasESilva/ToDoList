@@ -18,7 +18,6 @@ import br.com.ListaDeTarefas.ToDoList.dto.UsuarioDTO;
 import br.com.ListaDeTarefas.ToDoList.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
 @RestController
 @RequestMapping("/usuario")
 @CrossOrigin
@@ -26,6 +25,10 @@ public class UsuarioController {
 	
 	
 	private final UsuarioService usuarioService;
+	
+	public UsuarioController(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
+	}
 	
 	@PostMapping("/salvar")
 	public ResponseEntity<String> salvar(@RequestBody UsuarioDTO usuarioDTO) {
