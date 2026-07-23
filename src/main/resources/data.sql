@@ -22,3 +22,7 @@ INSERT INTO Perfil (DESCRICAO) VALUES ('Recursos Humanos');
 INSERT INTO Perfil (DESCRICAO) VALUES ('Auditor');
 INSERT INTO Perfil (DESCRICAO) VALUES ('Coordenador');
 INSERT INTO Perfil (DESCRICAO) VALUES ('Visitante');
+
+INSERT INTO Recurso (NOME, CHAVE) VALUES ('Tela Usuario', 'usuario');
+INSERT INTO Recurso (NOME, CHAVE) VALUES ('Tela Perfil', 'perfil');
+INSERT INTO Recurso (NOME, CHAVE) VALUES ('Tela Recurso', ' recurso');
