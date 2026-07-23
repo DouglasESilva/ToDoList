@@ -8,6 +8,7 @@ import jakarta.persistence.*;
 import org.springframework.beans.BeanUtils;
 
 @Entity
+@Table(name = "PERMISSAO_PERFIL_RECURSO")
 public class PermissaoPerfilRecursoEntity {
 	
 	@Id
@@ -71,12 +72,12 @@ public class PermissaoPerfilRecursoEntity {
 
 		BeanUtils.copyProperties(permissaoPerfilRecursoDTO, this);
 
-		if (permissaoPerfilRecursoDTO != null && permissaoPerfilRecursoDTO.getPerfilDTO() != null) {
-			this.perfilEntity = new PerfilEntity(permissaoPerfilRecursoDTO.getPerfilDTO());
+		if (permissaoPerfilRecursoDTO.getPerfil() != null) {
+			this.perfilEntity = new PerfilEntity(permissaoPerfilRecursoDTO.getPerfil());
 		}
 
-		if (permissaoPerfilRecursoDTO != null && permissaoPerfilRecursoDTO.getRecursoDTO() != null) {
-			this.recursoEntity = new RecursoEntity(permissaoPerfilRecursoDTO.getRecursoDTO());
+		if (permissaoPerfilRecursoDTO.getRecurso() != null) {
+			this.recursoEntity = new RecursoEntity(permissaoPerfilRecursoDTO.getRecurso());
 		}
 	}
 	

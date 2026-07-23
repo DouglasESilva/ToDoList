@@ -17,7 +17,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-@Table(name = "Perfil")
+@Table(name = "PERFIL")
 @NoArgsConstructor
 @Entity
 public class PerfilEntity {

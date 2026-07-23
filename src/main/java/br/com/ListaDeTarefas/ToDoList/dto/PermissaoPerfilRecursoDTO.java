@@ -10,9 +10,9 @@ public class PermissaoPerfilRecursoDTO {
 
     private Long id;
 
-    private PerfilDTO perfilDTO;
+    private PerfilDTO perfil;
 
-    private RecursoDTO recursoDTO;
+    private RecursoDTO recurso;
 
 
     public PermissaoPerfilRecursoDTO() {
@@ -23,12 +23,12 @@ public class PermissaoPerfilRecursoDTO {
 
         BeanUtils.copyProperties(permissaoPerfilRecursoEntity, this);
 
-        if (permissaoPerfilRecursoEntity != null && permissaoPerfilRecursoEntity.getPerfilEntity() != null) {
-            this.perfilDTO = new PerfilDTO(permissaoPerfilRecursoEntity.getPerfilEntity());
+        if (permissaoPerfilRecursoEntity.getPerfilEntity() != null) {
+            this.perfil = new PerfilDTO(permissaoPerfilRecursoEntity.getPerfilEntity());
         }
 
-        if (permissaoPerfilRecursoEntity != null && permissaoPerfilRecursoEntity.getRecursoEntity() != null) {
-            this.recursoDTO = new RecursoDTO(permissaoPerfilRecursoEntity.getRecursoEntity());
+        if (permissaoPerfilRecursoEntity.getRecursoEntity() != null) {
+            this.recurso = new RecursoDTO(permissaoPerfilRecursoEntity.getRecursoEntity());
         }
 
     }
@@ -53,19 +53,19 @@ public class PermissaoPerfilRecursoDTO {
         this.id = id;
     }
 
-    public PerfilDTO getPerfilDTO() {
-        return perfilDTO;
+    public PerfilDTO getPerfil() {
+        return perfil;
     }
 
-    public void setPerfilDTO(PerfilDTO perfilDTO) {
-        this.perfilDTO = perfilDTO;
+    public void setPerfil(PerfilDTO perfil) {
+        this.perfil = perfil;
     }
 
-    public RecursoDTO getRecursoDTO() {
-        return recursoDTO;
+    public RecursoDTO getRecurso() {
+        return recurso;
     }
 
-    public void setRecursoDTO(RecursoDTO recursoDTO) {
-        this.recursoDTO = recursoDTO;
+    public void setRecurso(RecursoDTO recurso) {
+        this.recurso = recurso;
     }
 }
