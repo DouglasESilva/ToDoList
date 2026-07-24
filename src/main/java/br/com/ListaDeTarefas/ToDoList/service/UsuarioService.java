@@ -2,6 +2,8 @@ package br.com.ListaDeTarefas.ToDoList.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.ListaDeTarefas.ToDoList.dto.UsuarioDTO;
@@ -15,10 +17,14 @@ public class UsuarioService {
  // CRUD
 	
 	private final UsuarioRepository usuarioRepository;
+
+
+	private final PasswordEncoder encoder;
 	
 	
 	public String salvar(UsuarioDTO usuarioDTO) {
 		UsuarioEntity usuarioEntity = new UsuarioEntity(usuarioDTO);
+		usuarioEntity.setSenha(encoder.encode(usuarioDTO.getSenha()));
 		usuarioRepository.save(usuarioEntity);
 		return "Usuario Salvo Com Sucesso";
 	}
@@ -31,6 +37,7 @@ public class UsuarioService {
 	
 	public UsuarioDTO alterar(UsuarioDTO usuarioDTO) {
 		UsuarioEntity usuarioEntity = new UsuarioEntity(usuarioDTO);
+		usuarioEntity.setSenha(encoder.encode(usuarioDTO.getSenha()));
 		return new UsuarioDTO(usuarioRepository.save(usuarioEntity));
 		
 	}

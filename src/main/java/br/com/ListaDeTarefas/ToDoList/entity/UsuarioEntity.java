@@ -1,14 +1,10 @@
 package br.com.ListaDeTarefas.ToDoList.entity;
 
 
+import jakarta.persistence.*;
 import org.springframework.beans.BeanUtils;
 
 import br.com.ListaDeTarefas.ToDoList.dto.UsuarioDTO;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,10 +21,13 @@ public class UsuarioEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+	@Column(nullable = false)
 	private String nome;
+	@Column(nullable = false)
 	private String login;
+	@Column(nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String senha;
 	
 	
