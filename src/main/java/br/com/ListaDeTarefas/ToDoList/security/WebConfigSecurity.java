@@ -1,6 +1,7 @@
 package br.com.ListaDeTarefas.ToDoList.security;
 
 import br.com.ListaDeTarefas.ToDoList.security.jwt.AuthEntryPointJwt;
+import br.com.ListaDeTarefas.ToDoList.security.jwt.AuthFilterToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableMethodSecurity
@@ -32,6 +34,11 @@ public class WebConfigSecurity {
     }
 
     @Bean
+    public AuthFilterToken authFilterToken() {
+        return new AuthFilterToken();
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.cors(Customizer.withDefaults());
@@ -40,7 +47,10 @@ public class WebConfigSecurity {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/auth/**").permitAll()
-                               .requestMatchers("/usuario/**").permitAll());
+                               .requestMatchers("/usuario/**").permitAll()
+                                .anyRequest().authenticated()
+                );
+        http.addFilterBefore(authFilterToken(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
 

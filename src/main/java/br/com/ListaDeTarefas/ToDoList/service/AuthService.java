@@ -41,7 +41,7 @@ public class AuthService {
             //TODO LOGIN OU SENHA INVALIDO
         }
 
-        return null;
+        return new AcessDTO("Acesso Negado");
 
     }
 }

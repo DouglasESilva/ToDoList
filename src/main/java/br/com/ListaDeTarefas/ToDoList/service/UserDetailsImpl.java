@@ -32,9 +32,9 @@ public class UserDetailsImpl implements UserDetails {
 
     public static UserDetailsImpl build(UsuarioEntity usuario) {
         return new UserDetailsImpl(usuario.getId(),
-                                                   usuario.getNome(),
-                                                    usuario.getLogin()
-                                                    , usuario.getEmail(),
+                                                    usuario.getNome(),
+                                                    usuario.getLogin(),
+                                                    usuario.getEmail(),
                                                     usuario.getSenha(),
                                                     new ArrayList<>());
     }
