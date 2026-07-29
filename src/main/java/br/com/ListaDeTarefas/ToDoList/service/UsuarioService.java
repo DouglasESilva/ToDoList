@@ -2,6 +2,7 @@ package br.com.ListaDeTarefas.ToDoList.service;
 
 import java.util.List;
 
+import br.com.ListaDeTarefas.ToDoList.entity.enums.TipoSituacaoUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,19 @@ public class UsuarioService {
 		usuarioEntity.setSenha(encoder.encode(usuarioDTO.getSenha()));
 		usuarioRepository.save(usuarioEntity);
 		return "Usuario Salvo Com Sucesso";
+	}
+
+	public void inserirNovoUsuario(UsuarioDTO usuarioDTO) {
+		UsuarioEntity usuarioEntity = new UsuarioEntity(usuarioDTO);
+		usuarioEntity.setSenha(encoder.encode(usuarioDTO.getSenha()));
+		usuarioEntity.setSituacao(TipoSituacaoUsuario.PENDENTE);
+		usuarioEntity.setId(null);
+		usuarioRepository.save(usuarioEntity);
+
+		// TODO: ENVIAR UM EMAIL PARA VERIFICAR A CONTA
+
+
+
 	}
 	
 	public List<UsuarioDTO> listarTodos() {

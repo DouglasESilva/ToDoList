@@ -1,15 +1,15 @@
 -- Forma Correta
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('João', 'joao123', 'senha123', 'joao@email.com');   
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Maria Silva', 'maria.silva', 'senha123', 'maria.silva@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Carlos Oliveira', 'carlos.o', 'senha123', 'carlos.oliveira@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Ana Souza', 'ana.souza', 'senha123', 'ana.souza@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Lucas Santos', 'lucas.santos', 'senha123', 'lucas.santos@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Fernanda Lima', 'fernanda.l', 'senha123', 'fernanda.lima@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Rafael Costa', 'rafael.costa', 'senha123', 'rafael.costa@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Beatriz Rocha', 'beatriz.r', 'senha123', 'beatriz.rocha@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Gabriel Alves', 'gabriel.a', 'senha123', 'gabriel.alves@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Camila Martins', 'camila.m', 'senha123', 'camila.martins@email.com');
-INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL) VALUES ('Thiago Ribeiro', 'thiago.r', 'senha123', 'thiago.ribeiro@email.com');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO ) VALUES ('João', 'joao123', 'senha123', 'joao@email.com', 'ATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Maria Silva', 'maria.silva', 'senha123', 'maria.silva@email.com', 'PENDENTE');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Carlos Oliveira', 'carlos.o', 'senha123', 'carlos.oliveira@email.com', 'INATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Ana Souza', 'ana.souza', 'senha123', 'ana.souza@email.com', 'ATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Lucas Santos', 'lucas.santos', 'senha123', 'lucas.santos@email.com', 'PENDENTE');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Fernanda Lima', 'fernanda.l', 'senha123', 'fernanda.lima@email.com', 'INATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Rafael Costa', 'rafael.costa', 'senha123', 'rafael.costa@email.com', 'ATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Beatriz Rocha', 'beatriz.r', 'senha123', 'beatriz.rocha@email.com', 'PENDENTE');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Gabriel Alves', 'gabriel.a', 'senha123', 'gabriel.alves@email.com', 'INATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL, SITUACAO) VALUES ('Camila Martins', 'camila.m', 'senha123', 'camila.martins@email.com', 'ATIVO');
+INSERT INTO Usuario (NOME, LOGIN, SENHA, EMAIL,  SITUACAO) VALUES ('Thiago Ribeiro', 'thiago.r', 'senha123', 'thiago.ribeiro@email.com', 'PENDENTE');
 
 INSERT INTO Perfil (DESCRICAO) VALUES ('Administrador');  
 INSERT INTO Perfil (DESCRICAO) VALUES ('Gerente');

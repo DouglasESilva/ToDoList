@@ -1,6 +1,7 @@
 package br.com.ListaDeTarefas.ToDoList.entity;
 
 
+import br.com.ListaDeTarefas.ToDoList.entity.enums.TipoSituacaoUsuario;
 import jakarta.persistence.*;
 import org.springframework.beans.BeanUtils;
 
@@ -29,6 +30,10 @@ public class UsuarioEntity {
 	private String email;
 	@Column(nullable = false)
 	private String senha;
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private TipoSituacaoUsuario situacao;
 	
 	
 	public UsuarioEntity(UsuarioDTO usuarioDTO) {
